@@ -41,7 +41,7 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative h-[420px] lg:h-[520px]">
-              <Image src={`https://images.pexels.com/photos/29372724/pexels-photo-29372724.jpeg?auto=compress&cs=tinysrgb&w=900`} alt="A nurse with a patient" fill className="object-cover object-center" unoptimized />
+              <Image src={`https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=900`} alt="A caregiver with a smiling patient at home" fill className="object-cover object-center" unoptimized />
             </div>
             <dl className="grid grid-cols-2 gap-px bg-gray-200 mt-px">
               <div className="bg-white pt-6 pr-6">
