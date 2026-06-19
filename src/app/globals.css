@@ -1,17 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --navy: #1b3a6b;
-  --red:  #cc1230;
-  --off-white: #f8f7f4;
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-navy: #1b3a6b;
+  --color-navy-dark: #13294d;
+  --color-brand-red: #c01228;
+  --color-brand-red-dark: #9d0f21;
+  --color-paper: #f4f1ea;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: #fff;
-  color: #111827;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-details summary::-webkit-details-marker { display: none; }
+/* Display serif for the largest headings only — creates real hierarchy
+   against the sans body, the way a design studio would set it. */
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 540;
+  letter-spacing: -0.015em;
+}
+
+/* A hand-set editorial label: short rule + small caps, used instead of
+   the centered "eyebrow pill" that reads as AI scaffolding. */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
+}
+.kicker::before {
+  content: "";
+  width: 1.6rem;
+  height: 2px;
+  background: var(--color-brand-red);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}

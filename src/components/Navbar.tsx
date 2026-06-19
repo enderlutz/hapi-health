@@ -25,11 +25,11 @@ export default function Navbar() {
   return (
     <header className={`sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? 'shadow-md' : ''}`}>
       {/* Top bar */}
-      <div className="bg-[#1b3a6b] text-white text-xs py-2 px-4">
+      <div className="bg-navy text-white text-xs py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <span className="text-blue-200">Serving Houston &amp; Harris County — Medicare &amp; Medicaid Certified</span>
-          <a href="tel:+18325551234" className="flex items-center gap-1.5 font-semibold hover:text-blue-200 transition-colors">
-            <Phone size={12} /> (832) 555-1234 &nbsp;|&nbsp; Available 24/7
+          <span className="text-white/70">Serving Houston &amp; Harris County&nbsp;&nbsp;·&nbsp;&nbsp;Medicare &amp; Medicaid Certified</span>
+          <a href="tel:+18325551234" className="flex items-center gap-1.5 font-semibold hover:text-white/80 transition-colors">
+            <Phone size={12} /> (832) 555-1234 &nbsp;·&nbsp; Available 24/7
           </a>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="text-gray-700 hover:text-[#1b3a6b] text-sm font-semibold transition-colors"
+                  className="text-gray-700 hover:text-navy text-sm font-semibold transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className="hidden lg:block bg-[#cc1230] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-[#a50f27] transition-colors"
+              className="hidden lg:block bg-brand-red text-white px-6 py-2.5 rounded-md text-sm font-semibold hover:bg-brand-red-dark transition-colors"
             >
               Request Care
             </Link>
@@ -76,10 +76,10 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-4 space-y-3">
-            <Link href="/contact" className="block bg-[#cc1230] text-white text-center py-3 rounded-full font-bold" onClick={() => setOpen(false)}>
+            <Link href="/contact" className="block bg-brand-red text-white text-center py-3 rounded-md font-semibold" onClick={() => setOpen(false)}>
               Request Care
             </Link>
-            <a href="tel:+18325551234" className="flex items-center justify-center gap-2 border-2 border-[#1b3a6b] text-[#1b3a6b] py-3 rounded-full font-bold">
+            <a href="tel:+18325551234" className="flex items-center justify-center gap-2 border border-navy text-navy py-3 rounded-md font-semibold">
               <Phone size={16} /> (832) 555-1234
             </a>
           </div>

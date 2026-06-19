@@ -1,162 +1,103 @@
 import Link from 'next/link'
-import { Heart, Award, Clock, Users, CheckCircle, ArrowRight, Mail } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, ArrowRight } from 'lucide-react'
+
+const CDN = 'https://images.unsplash.com'
 
 const openings = [
-  {
-    title: 'Registered Nurse (RN) - Home Health',
-    type: 'Full-time / Part-time',
-    location: 'Houston & surrounding areas',
-    desc: 'Conduct skilled nursing visits, wound care, medication management, and patient education in patients\' homes. Must be TX-licensed RN with at least 1 year of clinical experience.',
-  },
-  {
-    title: 'Licensed Vocational Nurse (LVN) - Home Health',
-    type: 'Full-time / Part-time',
-    location: 'Houston & surrounding areas',
-    desc: 'Perform skilled nursing visits under RN supervision. Ideal for LVNs with 1+ year of acute care or home health experience. TX LVN license required.',
-  },
-  {
-    title: 'Physical Therapist (PT)',
-    type: 'Full-time / PRN',
-    location: 'Houston & surrounding areas',
-    desc: 'Evaluate and treat patients in the home setting to restore mobility and function. TX PT license required. Home health experience preferred.',
-  },
-  {
-    title: 'Occupational Therapist (OT)',
-    type: 'Full-time / PRN',
-    location: 'Houston & surrounding areas',
-    desc: 'Help patients regain independence in daily living activities. TX OT license required. Experience with ADL training and home safety assessment preferred.',
-  },
-  {
-    title: 'Speech-Language Pathologist (SLP)',
-    type: 'PRN / Per visit',
-    location: 'Houston & surrounding areas',
-    desc: 'Evaluate and treat swallowing, speech, and communication disorders in the home setting. TX SLP license and ASHA Certificate of Clinical Competence required.',
-  },
-  {
-    title: 'Certified Home Health Aide (CHHA)',
-    type: 'Full-time / Part-time',
-    location: 'Houston & surrounding areas',
-    desc: 'Provide personal care and support to patients under RN supervision. Must hold current TX CHHA certification and have reliable transportation.',
-  },
-  {
-    title: 'Medical Social Worker (MSW / LMSW)',
-    type: 'Part-time / PRN',
-    location: 'Houston & surrounding areas',
-    desc: 'Conduct psychosocial assessments and connect patients to community resources. TX LMSW license required. Home health or case management experience preferred.',
-  },
-  {
-    title: 'Clinical Intake Coordinator',
-    type: 'Full-time',
-    location: 'Houston, TX (Office)',
-    desc: 'Manage incoming referrals, verify insurance, and coordinate care initiation. Strong knowledge of Medicare home health eligibility required. RN preferred.',
-  },
-]
-
-const benefits = [
-  'Competitive pay and performance bonuses',
-  'Flexible scheduling - control your own hours',
-  'Medical, dental, and vision insurance',
-  '401(k) with employer match',
-  'Paid time off and holidays',
-  'Mileage reimbursement',
-  'Continuing education support',
-  'Supportive, mission-driven culture',
+  { title: 'Registered Nurse (RN), Home Health', type: 'Full-time / Part-time', desc: 'Skilled nursing visits, wound care, medication management, and patient teaching in the home. TX RN license and at least one year of clinical experience.' },
+  { title: 'Licensed Vocational Nurse (LVN)', type: 'Full-time / Part-time', desc: 'Skilled visits under RN supervision. Ideal for LVNs with a year of acute-care or home-health experience. TX LVN license required.' },
+  { title: 'Physical Therapist (PT)', type: 'Full-time / PRN', desc: 'Evaluate and treat in the home to restore mobility and function. TX PT license required; home-health experience preferred.' },
+  { title: 'Occupational Therapist (OT)', type: 'Full-time / PRN', desc: 'Help patients regain independence in daily living. TX OT license required; ADL and home-safety experience preferred.' },
+  { title: 'Speech-Language Pathologist (SLP)', type: 'PRN / Per visit', desc: 'Treat swallowing, speech, and communication disorders at home. TX SLP license and ASHA CCC required.' },
+  { title: 'Certified Home Health Aide (CHHA)', type: 'Full-time / Part-time', desc: 'Personal care and support under RN supervision. Current TX CHHA certification and reliable transportation.' },
+  { title: 'Medical Social Worker (LMSW)', type: 'Part-time / PRN', desc: 'Psychosocial assessments and resource navigation. TX LMSW license; home-health or case-management experience preferred.' },
+  { title: 'Clinical Intake Coordinator', type: 'Full-time', desc: 'Manage referrals, verify insurance, and coordinate starts of care. Strong Medicare home-health eligibility knowledge; RN preferred.' },
 ]
 
 export default function CareersPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">Join Our Team</p>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-5">Careers at HAPI Health TX</h1>
-            <p className="text-blue-100 text-xl leading-relaxed">
-              Make a meaningful difference every day. We are looking for compassionate, skilled clinicians to join our growing home health family in the Houston area.
+      {/* Photo header */}
+      <section className="relative min-h-[58vh] flex items-end">
+        <div className="absolute inset-0">
+          <Image src={`${CDN}/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1800&q=80`} alt="A home health clinician at work" fill className="object-cover object-center" unoptimized />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/55 to-navy/20" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pb-16 pt-44 w-full">
+          <span className="kicker mb-5" style={{ color: '#fff' }}>Careers</span>
+          <h1 className="text-4xl lg:text-6xl text-white leading-[1.05] max-w-2xl">
+            Do the work that actually feels like the work.
+          </h1>
+          <p className="text-white/80 text-lg mt-5 max-w-xl">
+            No hospital floor, no twelve-hour chaos. Real relationships, your own schedule, and a team that has your back at every visit.
+          </p>
+        </div>
+      </section>
+
+      {/* Culture — editorial split, no icon tiles */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <h2 className="text-3xl lg:text-4xl text-navy leading-tight mb-6">A place where your work matters</h2>
+            <p className="text-gray-700 leading-relaxed mb-5">
+              Our clinicians are the whole company. We back them with competitive pay, schedules that fit a real life, and clinical managers who answer the phone at 9pm when you need a second opinion.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Home health is a different kind of nursing. You see the same patients long enough to make a difference, in their kitchens and living rooms, in the neighborhoods you already know.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Culture section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-2">Our Culture</p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                A Place Where Your Work Matters
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-5">
-                At HAPI Health TX, our clinicians are the heart of everything we do. We invest in our team with competitive pay, flexible schedules, and a culture of genuine support and recognition.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Working in home health is different. You build real relationships with patients and families. You see the direct impact of your care. And you do it on your own terms, in your own community.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { icon: Heart, title: 'Mission-Driven', desc: 'Every visit makes a real difference in a patient\'s life.' },
-                { icon: Clock, title: 'Flexible Hours', desc: 'Build a schedule that works for your life, not just the agency.' },
-                { icon: Award, title: 'Growth Opportunities', desc: 'CEUs, mentorship, and leadership pathways within the agency.' },
-                { icon: Users, title: 'Team Support', desc: 'Clinical managers available 24/7 for guidance and backup.' },
-              ].map((c) => (
-                <div key={c.title} className="bg-blue-50 rounded-2xl p-6">
-                  <c.icon size={22} className="text-blue-600 mb-3" />
-                  <h3 className="font-bold text-gray-900 mb-1">{c.title}</h3>
-                  <p className="text-gray-500 text-sm">{c.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900">What We Offer</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {benefits.map((b) => (
-              <div key={b} className="flex items-start gap-3 bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <CheckCircle size={16} className="text-blue-600 mt-0.5 shrink-0" />
-                <span className="text-gray-700 text-sm">{b}</span>
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 self-center">
+            {[
+              ['It means something', 'Every visit changes a real person\'s day. You will see it on their face.'],
+              ['Your own hours', 'Build a schedule around your life, not the other way around.'],
+              ['Room to grow', 'CEUs, mentorship, and a path into clinical leadership.'],
+              ['Never on an island', 'A clinical manager on call, day or night, for backup and guidance.'],
+            ].map(([t, b]) => (
+              <div key={t} className="border-t border-gray-200 pt-5">
+                <h3 className="font-semibold text-navy text-lg mb-1.5">{t}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{b}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Open Positions */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-2">Now Hiring</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Open Positions</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto mt-4">
-              We are actively recruiting across clinical disciplines. Do not see your role listed? Send your resume anyway.
-            </p>
+      {/* Benefits — inline prose row, not a checkmark grid */}
+      <section className="py-16 bg-paper">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="text-2xl text-navy mb-6 font-display">What we offer</h2>
+          <div className="flex flex-wrap gap-x-3 gap-y-3 text-gray-700">
+            {[
+              'Competitive pay & bonuses', 'Flexible scheduling', 'Medical, dental & vision', '401(k) with match',
+              'Paid time off & holidays', 'Mileage reimbursement', 'Continuing-education support', 'A team that backs you up',
+            ].map((b, i) => (
+              <span key={b} className="text-[15px]">
+                {b}{i < 7 && <span className="text-brand-red mx-2">·</span>}
+              </span>
+            ))}
           </div>
-          <div className="space-y-4">
+        </div>
+      </section>
+
+      {/* Openings — clean list, no chips */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <span className="kicker mb-5">Now hiring</span>
+            <h2 className="text-3xl lg:text-4xl text-navy">Open positions</h2>
+          </div>
+          <div className="border-t border-gray-200">
             {openings.map((job) => (
-              <div key={job.title} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-sm transition-all group">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">{job.title}</h3>
-                    <div className="flex flex-wrap gap-3 mt-2">
-                      <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">{job.type}</span>
-                      <span className="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">{job.location}</span>
-                    </div>
-                    <p className="text-gray-500 text-sm mt-3 leading-relaxed">{job.desc}</p>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-800 transition-colors whitespace-nowrap inline-flex items-center gap-2 shrink-0"
-                  >
-                    Apply Now <ArrowRight size={14} />
+              <div key={job.title} className="group border-b border-gray-200 py-7 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+                <div className="md:w-2/3">
+                  <h3 className="text-xl font-semibold text-navy group-hover:text-brand-red transition-colors">{job.title}</h3>
+                  <p className="text-gray-500 text-sm mt-2 leading-relaxed">{job.desc}</p>
+                </div>
+                <div className="md:w-1/3 flex items-center justify-between md:justify-end gap-6">
+                  <span className="text-sm text-gray-500">{job.type}</span>
+                  <Link href="/contact" className="text-navy font-semibold text-sm inline-flex items-center gap-1.5 group-hover:text-brand-red transition-colors whitespace-nowrap">
+                    Apply <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>
@@ -165,17 +106,14 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Apply CTA */}
-      <section className="py-16 bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-3">Do Not See the Right Fit?</h2>
-          <p className="text-blue-200 mb-8 max-w-xl mx-auto">
-            We are always growing. Send your resume and we will reach out when a position matches your skills.
-          </p>
-          <a
-            href="mailto:careers@hapihealthtx.com"
-            className="inline-flex items-center gap-2 bg-white text-blue-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition-colors"
-          >
+      {/* CTA */}
+      <section className="bg-navy text-white py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="max-w-lg">
+            <h2 className="text-3xl lg:text-4xl leading-tight mb-3">Don&apos;t see your role?</h2>
+            <p className="text-white/75">We are always growing. Send your resume and we will reach out when something fits.</p>
+          </div>
+          <a href="mailto:careers@hapihealthtx.com" className="inline-flex items-center gap-2.5 bg-brand-red text-white px-8 py-4 rounded-md font-semibold hover:bg-brand-red-dark transition-colors shrink-0">
             <Mail size={18} /> careers@hapihealthtx.com
           </a>
         </div>
