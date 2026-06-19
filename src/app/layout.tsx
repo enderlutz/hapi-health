@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
-  title: "HAPI Health TX | Home Health Services in Houston, TX",
+  title: "HAPI Health TX | Home Health Care in Houston, TX",
   description:
-    "HAPI Health TX provides compassionate, clinically excellent home health care — skilled nursing, therapy, wound care, and more — across the greater Houston area.",
+    "Skilled nursing, therapy, wound care, and more — delivered by licensed clinicians in the comfort of your home across the greater Houston area. Medicare & Medicaid certified.",
 };
 
 export default function RootLayout({
@@ -19,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.className} min-h-full flex flex-col antialiased`}>
+      <body className={`${jakarta.className} min-h-full flex flex-col`}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

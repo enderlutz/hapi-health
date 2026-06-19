@@ -1,103 +1,106 @@
 import Link from 'next/link'
-import { Stethoscope, Activity, Heart, Brain, Home, Users, Shield, Droplets, CheckCircle, ArrowRight, Phone } from 'lucide-react'
+import Image from 'next/image'
+import { CheckCircle, ArrowRight, Phone } from 'lucide-react'
+
+const CDN = 'https://images.unsplash.com'
 
 const services = [
   {
     id: 'skilled-nursing',
-    icon: Stethoscope,
     title: 'Skilled Nursing',
-    subtitle: 'Expert clinical care delivered at home by registered nurses',
-    desc: 'Our registered nurses (RNs) and licensed vocational nurses (LVNs) provide hospital-level care in the comfort of your home. We specialize in post-surgical care, chronic disease management, and complex medication regimens.',
+    photo: `${CDN}/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80`,
+    headline: 'Hospital-quality nursing. At home.',
+    desc: 'Our licensed RNs and LVNs deliver the full scope of skilled nursing care in the comfort of your home — from complex wound management to IV therapy and chronic disease monitoring.',
     includes: [
-      'Medication administration and management',
-      'IV therapy and infusion care',
+      'Medication administration & management',
+      'IV therapy & infusion care',
       'Post-surgical wound assessment',
       'Vital signs monitoring',
-      'Chronic disease education (diabetes, COPD, CHF)',
-      'Catheter care and management',
+      'Diabetes & CHF management',
+      'Catheter care',
       'Pain management',
       'Fall risk assessment',
     ],
   },
   {
     id: 'physical-therapy',
-    icon: Activity,
     title: 'Physical Therapy',
-    subtitle: 'Restore strength, balance, and mobility',
-    desc: 'Our licensed physical therapists design individualized treatment plans to help patients regain function, reduce pain, and return to their daily activities. We treat patients recovering from surgery, injury, or illness.',
+    photo: `${CDN}/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80`,
+    headline: 'Move better. Live better.',
+    desc: 'Our licensed physical therapists come to your home and design individualized treatment plans to restore strength, balance, and mobility — whether you are recovering from surgery, a stroke, or injury.',
     includes: [
-      'Gait training and fall prevention',
+      'Gait training & fall prevention',
       'Post-surgical rehabilitation',
-      'Strength and range of motion exercises',
-      'Balance and coordination training',
+      'Strength & range of motion',
+      'Balance & coordination',
       'Pain management techniques',
       'Home safety evaluation',
-      'Assistive device training (walker, cane)',
-      'Orthopedic and neurological rehab',
+      'Assistive device training',
+      'Orthopedic & neuro rehab',
     ],
   },
   {
     id: 'occupational-therapy',
-    icon: Heart,
     title: 'Occupational Therapy',
-    subtitle: 'Regain independence in daily life',
-    desc: 'Our occupational therapists help patients regain the ability to perform everyday activities independently. We assess the home environment, recommend adaptive equipment, and teach compensatory strategies.',
+    photo: `${CDN}/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80`,
+    headline: 'Back to the life you love.',
+    desc: 'Our occupational therapists help patients regain independence in the activities of daily life — bathing, dressing, cooking, and more — through adaptive techniques and home assessments.',
     includes: [
-      'Activities of daily living (ADL) training',
-      'Fine motor skill rehabilitation',
+      'ADL training',
+      'Fine motor rehabilitation',
       'Adaptive equipment training',
       'Home modification recommendations',
       'Cognitive rehabilitation',
-      'Energy conservation strategies',
+      'Energy conservation',
       'Upper extremity strengthening',
-      'Transfer and positioning techniques',
+      'Transfer & positioning',
     ],
   },
   {
     id: 'speech-therapy',
-    icon: Brain,
     title: 'Speech Therapy',
-    subtitle: 'Restore communication and swallowing function',
-    desc: 'Our speech-language pathologists evaluate and treat disorders of speech, language, voice, and swallowing. We work with patients recovering from stroke, head and neck surgery, or neurological conditions.',
+    photo: `${CDN}/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80`,
+    headline: 'Find your voice again.',
+    desc: 'Our speech-language pathologists evaluate and treat disorders of speech, language, voice, and swallowing — with a focus on patients recovering from stroke, head/neck surgery, or neurological conditions.',
     includes: [
-      'Dysphagia (swallowing disorder) treatment',
-      'Aphasia and language rehabilitation',
+      'Dysphagia treatment',
+      'Aphasia & language rehab',
       'Voice disorder treatment',
       'Cognitive-communication therapy',
-      'Augmentative communication devices',
+      'AAC device support',
       'Stuttering treatment',
-      'Post-stroke communication rehab',
-      'Memory and cognitive strategies',
+      'Post-stroke communication',
+      'Memory & cognitive strategies',
     ],
   },
   {
     id: 'home-health-aide',
-    icon: Home,
     title: 'Home Health Aide',
-    subtitle: 'Compassionate personal care assistance',
-    desc: 'Our certified home health aides (CHHAs) provide personal care and assistance with daily living activities under the supervision of a registered nurse. Aides are background-checked, trained, and compassionate.',
+    photo: `${CDN}/photo-1530026405845-9e2477e68c38?auto=format&fit=crop&w=900&q=80`,
+    headline: 'Compassionate hands-on care.',
+    desc: 'Our certified home health aides provide personal care and daily assistance under RN supervision. Every aide is background-checked, trained, and matched to your needs.',
     includes: [
-      'Bathing, grooming, and hygiene',
-      'Dressing and undressing assistance',
-      'Ambulation and mobility support',
+      'Bathing & personal hygiene',
+      'Dressing assistance',
+      'Mobility support',
       'Meal preparation',
       'Light housekeeping',
       'Medication reminders',
       'Vital sign recording',
-      'Companion and emotional support',
+      'Companion care',
     ],
   },
   {
     id: 'social-work',
-    icon: Users,
     title: 'Medical Social Work',
-    subtitle: 'Connecting patients and families to the resources they need',
-    desc: 'Our licensed medical social workers (LMSWs) provide counseling, resource navigation, and care coordination. We help patients and families cope with the emotional and practical challenges of illness and recovery.',
+    photo: `${CDN}/photo-1563213126-a4273aed2016?auto=format&fit=crop&w=900&q=80`,
+    headline: 'You are not in this alone.',
+    desc: 'Our licensed medical social workers help patients and families navigate the emotional and practical challenges of illness, connecting you to resources and advocates who can help.',
     includes: [
-      'Community resource identification',
-      'Financial assistance navigation',
+      'Community resource navigation',
+      'Financial assistance guidance',
       'Discharge planning support',
-      'Caregiver counseling and education',
+      'Caregiver counseling',
       'Crisis intervention',
       'Long-term care planning',
       'Mental health assessment',
@@ -106,36 +109,36 @@ const services = [
   },
   {
     id: 'wound-care',
-    icon: Shield,
     title: 'Wound Care',
-    subtitle: 'Specialized treatment for complex wounds',
-    desc: 'Our wound care certified nurses provide advanced assessment and management of acute and chronic wounds. We follow evidence-based protocols to promote healing and prevent infection or complications.',
+    photo: `${CDN}/photo-1584820927498-4e5f9c8b83b0?auto=format&fit=crop&w=900&q=80`,
+    headline: 'Expert wound management at home.',
+    desc: 'Our wound-care certified nurses provide advanced assessment and management of acute and chronic wounds — following evidence-based protocols to promote healing and prevent complications.',
     includes: [
       'Surgical wound care',
-      'Pressure injury (bed sore) treatment',
+      'Pressure injury treatment',
       'Diabetic wound management',
-      'Venous and arterial ulcer care',
-      'Debridement and dressing changes',
+      'Venous & arterial ulcer care',
+      'Debridement & dressing changes',
       'Negative pressure wound therapy',
-      'Wound measurement and documentation',
+      'Wound measurement & documentation',
       'Family wound care education',
     ],
   },
   {
     id: 'infusion-therapy',
-    icon: Droplets,
     title: 'Infusion Therapy',
-    subtitle: 'IV medications safely administered at home',
-    desc: 'Our skilled nurses administer a wide range of intravenous medications at home, providing a safe and convenient alternative to hospital or infusion clinic visits.',
+    photo: `${CDN}/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=900&q=80`,
+    headline: 'IV care without leaving home.',
+    desc: 'Our skilled nurses administer a wide range of intravenous medications in your home — a safe, effective alternative to hospital infusion clinic visits.',
     includes: [
       'IV antibiotic therapy',
       'IV hydration',
       'Chemotherapy support',
       'Pain management infusions',
-      'PICC line care and maintenance',
-      'Port-a-cath access and care',
-      'Total parenteral nutrition (TPN)',
-      'Blood draws and lab coordination',
+      'PICC line care & maintenance',
+      'Port-a-cath access & care',
+      'TPN administration',
+      'Blood draws & lab coordination',
     ],
   },
 ]
@@ -143,108 +146,107 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+      {/* Header */}
+      <section className="bg-[#0c2d4e] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">What We Offer</p>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-5">Home Health Services</h1>
-            <p className="text-blue-100 text-xl leading-relaxed">
-              A full continuum of skilled clinical services delivered by licensed professionals, right in your home. We coordinate seamlessly with your physician to support safe recovery and long-term health.
+            <p className="text-teal-300 font-bold text-sm uppercase tracking-widest mb-4">Our Services</p>
+            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-5">
+              Everything you need.<br />All at home.
+            </h1>
+            <p className="text-blue-200 text-xl leading-relaxed">
+              A full spectrum of skilled clinical services, coordinated with your physician and delivered by licensed, background-checked professionals.
             </p>
           </div>
         </div>
       </section>
 
       {/* Quick nav */}
-      <section className="bg-white border-b sticky top-20 z-40">
+      <nav className="bg-white border-b sticky top-[88px] z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-6 overflow-x-auto py-4 text-sm font-medium scrollbar-hide">
+          <div className="flex gap-6 overflow-x-auto py-4 text-sm font-semibold">
             {services.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className="text-gray-500 hover:text-blue-700 whitespace-nowrap transition-colors"
-              >
+              <a key={s.id} href={`#${s.id}`} className="text-gray-500 hover:text-[#0c2d4e] whitespace-nowrap transition-colors">
                 {s.title}
               </a>
             ))}
           </div>
         </div>
-      </section>
+      </nav>
 
-      {/* Services list */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      {/* Services */}
+      <section className="py-12 bg-[#faf9f6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           {services.map((s, i) => (
             <div
               key={s.id}
               id={s.id}
-              className={`rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col lg:flex-row ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              className={`bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
             >
-              <div className={`lg:w-2/5 p-10 flex flex-col justify-center ${i % 2 === 0 ? 'bg-blue-700' : 'bg-blue-900'} text-white`}>
-                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-5">
-                  <s.icon size={28} className="text-white" />
+              {/* Photo */}
+              <div className="lg:w-2/5 relative min-h-[300px]">
+                <Image
+                  src={s.photo}
+                  alt={s.title}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-[#0c2d4e]/40" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white/80 text-xs font-bold uppercase tracking-widest mb-1">{s.title}</p>
+                  <p className="text-white text-2xl font-extrabold leading-tight">{s.headline}</p>
                 </div>
-                <h2 className="text-3xl font-bold mb-2">{s.title}</h2>
-                <p className="text-blue-200 font-medium mb-4">{s.subtitle}</p>
-                <p className="text-blue-100 leading-relaxed text-sm">{s.desc}</p>
-                <Link
-                  href="/contact"
-                  className="mt-6 bg-white text-blue-800 px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-50 transition-colors inline-flex items-center gap-2 w-fit"
-                >
-                  Request This Service <ArrowRight size={14} />
-                </Link>
               </div>
-              <div className="lg:w-3/5 bg-white p-10">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">What&apos;s Included</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+              {/* Content */}
+              <div className="lg:w-3/5 p-8 lg:p-12">
+                <p className="text-gray-600 leading-relaxed mb-8">{s.desc}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {s.includes.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle size={16} className="text-blue-600 mt-0.5 shrink-0" />
+                    <div key={item} className="flex items-start gap-2.5">
+                      <CheckCircle size={15} className="text-[#1a7a72] mt-0.5 shrink-0" />
                       <span className="text-gray-700 text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
+                <Link
+                  href="/contact"
+                  className="mt-8 inline-flex items-center gap-2 bg-[#0c2d4e] text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#0a2540] transition-colors"
+                >
+                  Request This Service <ArrowRight size={14} />
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Insurance section */}
+      {/* Insurance */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">We Accept Most Insurance Plans</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto mb-10">
-            Our team verifies your insurance at no cost before care begins, so you know exactly what to expect. We accept Medicare, Medicaid, and most major private insurance plans.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-10">
-            {['Medicare', 'Medicaid', 'Blue Cross Blue Shield', 'United Healthcare', 'Aetna', 'Humana', 'Cigna', 'Private Pay'].map((ins) => (
-              <div key={ins} className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-sm font-medium text-gray-700">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-extrabold text-[#0c2d4e] mb-3">We Accept Most Insurance Plans</h2>
+          <p className="text-gray-500 mb-10">We verify your benefits at no cost before care begins.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {['Medicare', 'Medicaid', 'Blue Cross', 'United', 'Aetna', 'Humana', 'Cigna', 'Private Pay'].map((ins) => (
+              <div key={ins} className="bg-[#faf9f6] border border-gray-200 rounded-xl py-3 text-sm font-semibold text-gray-700">
                 {ins}
               </div>
             ))}
           </div>
-          <Link
-            href="/patients#insurance"
-            className="text-blue-600 font-semibold hover:underline inline-flex items-center gap-1"
-          >
-            Learn more about coverage <ArrowRight size={14} />
-          </Link>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-14 bg-blue-800 text-white">
+      <section className="py-14 bg-[#0c2d4e] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Have Questions About Our Services?</h2>
-          <p className="text-blue-200 mb-8">Our clinical coordinators are available around the clock.</p>
+          <h2 className="text-3xl font-extrabold mb-4">Questions about a specific service?</h2>
+          <p className="text-blue-200 mb-8">Our clinical team will walk you through every option.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-white text-blue-800 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition-colors">
+            <Link href="/contact" className="bg-[#1a7a72] text-white px-8 py-4 rounded-full font-bold hover:bg-[#166b63] transition-colors">
               Request Care
             </Link>
-            <a href="tel:+18325551234" className="border-2 border-white/50 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+            <a href="tel:+18325551234" className="border-2 border-white/40 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
               <Phone size={18} /> (832) 555-1234
             </a>
           </div>

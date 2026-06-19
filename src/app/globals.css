@@ -1,6 +1,23 @@
 @import "tailwindcss";
 
+:root {
+  --navy: #0c2d4e;
+  --teal: #1a7a72;
+  --warm-white: #faf9f6;
+  --text-primary: #111827;
+  --text-muted: #6b7280;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #ffffff;
-  color: #171717;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
 }
