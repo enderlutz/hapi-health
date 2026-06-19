@@ -5,16 +5,30 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
     type: 'patient', name: '', phone: '', email: '',
-    patientName: '', insurance: '', services: '', message: '',
+    patientName: '', insurance: '', services: [] as string[], message: '',
   })
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
+  function toggleService(svc: string) {
+    setForm((f) => ({
+      ...f,
+      services: f.services.includes(svc)
+        ? f.services.filter((s) => s !== svc)
+        : [...f.services, svc],
+    }))
+  }
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setSubmitted(true)
   }
+
+  const serviceOptions = [
+    'Skilled Nursing', 'Physical Therapy', 'Occupational Therapy',
+    'Speech Therapy', 'Home Health Aide', 'Wound Care',
+    'Infusion Therapy', 'Not Sure',
+  ]
 
   const inputCls = 'w-full border border-gray-300 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy bg-white'
 
@@ -126,24 +140,36 @@ export default function ContactPage() {
                         </label>
                         <input name="patientName" type="text" value={form.patientName} onChange={handleChange} className={inputCls} placeholder="Patient full name" />
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Insurance</label>
-                          <select name="insurance" value={form.insurance} onChange={handleChange} className={inputCls}>
-                            <option value="">Select insurance</option>
-                            <option>Medicare</option><option>Medicaid</option><option>Blue Cross Blue Shield</option>
-                            <option>United Healthcare</option><option>Aetna</option><option>Humana</option>
-                            <option>Cigna</option><option>Private Pay</option><option>Other</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Services needed</label>
-                          <select name="services" value={form.services} onChange={handleChange} className={inputCls}>
-                            <option value="">Select service</option>
-                            <option>Skilled Nursing</option><option>Physical Therapy</option><option>Occupational Therapy</option>
-                            <option>Speech Therapy</option><option>Home Health Aide</option><option>Wound Care</option>
-                            <option>Infusion Therapy</option><option>Multiple Services</option><option>Not Sure</option>
-                          </select>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-1.5">Insurance</label>
+                        <select name="insurance" value={form.insurance} onChange={handleChange} className={inputCls}>
+                          <option value="">Select insurance</option>
+                          <option>Medicare</option><option>Medicaid</option><option>Blue Cross Blue Shield</option>
+                          <option>United Healthcare</option><option>Aetna</option><option>Humana</option>
+                          <option>Cigna</option><option>Private Pay</option><option>Other</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                          Services needed <span className="font-normal text-gray-400">(select all that apply)</span>
+                        </label>
+                        <div className="flex flex-wrap gap-2.5">
+                          {serviceOptions.map((svc) => {
+                            const active = form.services.includes(svc)
+                            return (
+                              <button
+                                key={svc}
+                                type="button"
+                                onClick={() => toggleService(svc)}
+                                aria-pressed={active}
+                                className={`px-4 py-2 rounded-md text-sm font-medium border transition-colors ${
+                                  active ? 'border-navy bg-navy text-white' : 'border-gray-300 text-gray-600 hover:border-navy'
+                                }`}
+                              >
+                                {svc}
+                              </button>
+                            )
+                          })}
                         </div>
                       </div>
                     </>
