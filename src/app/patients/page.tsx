@@ -22,7 +22,7 @@ export default function PatientsPage() {
       <section className="relative min-h-[50vh] flex items-end">
         <div className="absolute inset-0">
           <Image
-            src={`${CDN}/photo-1530026405845-9e2477e68c38?auto=format&fit=crop&w=1800&q=80`}
+            src={`https://images.pexels.com/photos/29372693/pexels-photo-29372693.jpeg?auto=compress&cs=tinysrgb&w=1800`}
             alt="Nurse with patient at home"
             fill className="object-cover object-center" unoptimized
           />

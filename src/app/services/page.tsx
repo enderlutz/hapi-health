@@ -2,61 +2,59 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Phone } from 'lucide-react'
 
-const CDN = 'https://images.unsplash.com'
-
 const services = [
   {
     id: 'skilled-nursing', title: 'Skilled Nursing',
-    photo: `${CDN}/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/7345459/pexels-photo-7345459.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'Hospital-grade nursing, at the kitchen table.',
     desc: 'Our RNs and LVNs deliver the full scope of skilled nursing at home, from complex wound management to IV therapy and chronic-disease care.',
     includes: ['Medication management', 'IV therapy & infusion', 'Post-surgical wound assessment', 'Vital-sign monitoring', 'Diabetes & CHF management', 'Catheter care', 'Pain management', 'Fall-risk assessment'],
   },
   {
     id: 'physical-therapy', title: 'Physical Therapy',
-    photo: `${CDN}/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/7551627/pexels-photo-7551627.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'Get moving again, on your own floor.',
     desc: 'Licensed physical therapists build a plan around your home and your goals, whether you are recovering from surgery, a stroke, or a fall.',
     includes: ['Gait training & fall prevention', 'Post-surgical rehab', 'Strength & range of motion', 'Balance & coordination', 'Pain-management techniques', 'Home-safety evaluation', 'Assistive-device training', 'Orthopedic & neuro rehab'],
   },
   {
     id: 'occupational-therapy', title: 'Occupational Therapy',
-    photo: `${CDN}/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/29372729/pexels-photo-29372729.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'Back to the routines that make a day yours.',
     desc: 'Occupational therapists help you regain independence in daily life, from dressing and cooking to navigating your own home safely.',
     includes: ['Activities of daily living', 'Fine-motor rehab', 'Adaptive-equipment training', 'Home-modification advice', 'Cognitive rehab', 'Energy conservation', 'Upper-extremity strengthening', 'Transfer & positioning'],
   },
   {
     id: 'speech-therapy', title: 'Speech Therapy',
-    photo: `${CDN}/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/18429374/pexels-photo-18429374.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'Find the words, and the swallow, again.',
     desc: 'Speech-language pathologists treat speech, language, voice, and swallowing disorders, with a focus on recovery from stroke and neurological conditions.',
     includes: ['Dysphagia (swallowing) therapy', 'Aphasia & language rehab', 'Voice-disorder treatment', 'Cognitive-communication therapy', 'Communication devices', 'Post-stroke recovery', 'Memory strategies', 'Caregiver coaching'],
   },
   {
     id: 'home-health-aide', title: 'Home Health Aide',
-    photo: `${CDN}/photo-1530026405845-9e2477e68c38?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/18459193/pexels-photo-18459193.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'A steady, familiar hand each day.',
     desc: 'Certified aides provide personal care and daily support under RN supervision. Every aide is background-checked, trained, and matched to your needs.',
     includes: ['Bathing & hygiene', 'Dressing assistance', 'Mobility support', 'Meal preparation', 'Light housekeeping', 'Medication reminders', 'Vital-sign recording', 'Companionship'],
   },
   {
     id: 'social-work', title: 'Medical Social Work',
-    photo: `${CDN}/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/7345460/pexels-photo-7345460.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'Someone in your corner for the hard parts.',
     desc: 'Licensed social workers help patients and families navigate the practical and emotional side of illness, connecting you with the resources you need.',
     includes: ['Community-resource navigation', 'Financial-assistance guidance', 'Discharge-planning support', 'Caregiver counseling', 'Crisis intervention', 'Long-term-care planning', 'Mental-health assessment', 'Advance-directive education'],
   },
   {
     id: 'wound-care', title: 'Wound Care',
-    photo: `${CDN}/photo-1584820927498-4e5f9c8b83b0?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/5721552/pexels-photo-5721552.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'Difficult wounds, managed by specialists.',
     desc: 'Wound-care certified nurses assess and manage acute and chronic wounds using evidence-based protocols to promote healing and prevent complications.',
     includes: ['Surgical wound care', 'Pressure-injury treatment', 'Diabetic-wound management', 'Venous & arterial ulcers', 'Debridement & dressings', 'Negative-pressure therapy', 'Wound documentation', 'Family wound education'],
   },
   {
     id: 'infusion-therapy', title: 'Infusion Therapy',
-    photo: `${CDN}/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=900&q=80`,
+    photo: `https://images.pexels.com/photos/3845115/pexels-photo-3845115.jpeg?auto=compress&cs=tinysrgb&w=900`,
     headline: 'IV medication without the clinic trip.',
     desc: 'Skilled nurses administer a wide range of intravenous medications at home, a safe and convenient alternative to the infusion clinic.',
     includes: ['IV antibiotics', 'IV hydration', 'Chemotherapy support', 'Pain-management infusions', 'PICC-line care', 'Port-a-cath access', 'TPN administration', 'Blood draws & lab coordination'],

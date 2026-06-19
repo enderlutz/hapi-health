@@ -2,8 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, ArrowRight } from 'lucide-react'
 
-const CDN = 'https://images.unsplash.com'
-
 const openings = [
   { title: 'Registered Nurse (RN), Home Health', type: 'Full-time / Part-time', desc: 'Skilled nursing visits, wound care, medication management, and patient teaching in the home. TX RN license and at least one year of clinical experience.' },
   { title: 'Licensed Vocational Nurse (LVN)', type: 'Full-time / Part-time', desc: 'Skilled visits under RN supervision. Ideal for LVNs with a year of acute-care or home-health experience. TX LVN license required.' },
@@ -21,7 +19,7 @@ export default function CareersPage() {
       {/* Photo header */}
       <section className="relative min-h-[58vh] flex items-end">
         <div className="absolute inset-0">
-          <Image src={`${CDN}/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1800&q=80`} alt="A home health clinician at work" fill className="object-cover object-center" unoptimized />
+          <Image src={`https://images.pexels.com/photos/7345476/pexels-photo-7345476.jpeg?auto=compress&cs=tinysrgb&w=1800`} alt="A home health clinician at work" fill className="object-cover object-center" unoptimized />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/55 to-navy/20" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pb-16 pt-44 w-full">

@@ -5,10 +5,10 @@ import { Phone } from 'lucide-react'
 const CDN = 'https://images.unsplash.com'
 
 const leadership = [
-  { name: 'Patricia Mendez, RN, MSN', title: 'Chief Executive Officer', bio: 'Twenty years of clinical and administrative leadership in home health. Patricia founded HAPI to bring hospital-quality care to the Houston families she grew up around.', photo: `${CDN}/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80` },
-  { name: 'David Okafor, PT, DPT', title: 'Director of Clinical Services', bio: 'A doctoral-level physical therapist with fifteen years in home rehabilitation. David owns clinical quality, outcomes, and the training every therapist goes through.', photo: `${CDN}/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80` },
-  { name: 'Sandra Tran, LMSW', title: 'Director of Patient Services', bio: 'Sandra runs intake, care coordination, and social work, making sure no patient falls through the cracks between the hospital and home.', photo: `${CDN}/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80` },
-  { name: 'James Holloway, RN, CWCN', title: 'Wound Care Coordinator', bio: 'A certified wound-care nurse who leads our wound program and trains the nursing staff on the protocols that keep patients healing and out of the hospital.', photo: `${CDN}/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80` },
+  { name: 'Patricia Mendez, RN, MSN', title: 'Chief Executive Officer', bio: 'Twenty years of clinical and administrative leadership in home health. Patricia founded HAPI to bring hospital-quality care to the Houston families she grew up around.', photo: `https://images.pexels.com/photos/15780889/pexels-photo-15780889.jpeg?auto=compress&cs=tinysrgb&w=400` },
+  { name: 'David Okafor, PT, DPT', title: 'Director of Clinical Services', bio: 'A doctoral-level physical therapist with fifteen years in home rehabilitation. David owns clinical quality, outcomes, and the training every therapist goes through.', photo: `https://images.pexels.com/photos/13100886/pexels-photo-13100886.jpeg?auto=compress&cs=tinysrgb&w=400` },
+  { name: 'Sandra Tran, LMSW', title: 'Director of Patient Services', bio: 'Sandra runs intake, care coordination, and social work, making sure no patient falls through the cracks between the hospital and home.', photo: `https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&w=400` },
+  { name: 'James Holloway, RN, CWCN', title: 'Wound Care Coordinator', bio: 'A certified wound-care nurse who leads our wound program and trains the nursing staff on the protocols that keep patients healing and out of the hospital.', photo: `https://images.pexels.com/photos/10657877/pexels-photo-10657877.jpeg?auto=compress&cs=tinysrgb&w=400` },
 ]
 
 export default function AboutPage() {
@@ -41,7 +41,7 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative h-[420px] lg:h-[520px]">
-              <Image src={`${CDN}/photo-1530026405845-9e2477e68c38?auto=format&fit=crop&w=900&q=80`} alt="A nurse with a patient" fill className="object-cover object-center" unoptimized />
+              <Image src={`https://images.pexels.com/photos/29372724/pexels-photo-29372724.jpeg?auto=compress&cs=tinysrgb&w=900`} alt="A nurse with a patient" fill className="object-cover object-center" unoptimized />
             </div>
             <dl className="grid grid-cols-2 gap-px bg-gray-200 mt-px">
               <div className="bg-white pt-6 pr-6">

@@ -2,16 +2,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Phone } from 'lucide-react'
 
-const CDN = 'https://images.unsplash.com'
+const UN = 'https://images.unsplash.com'
+const PX = 'https://images.pexels.com/photos'
 
 const photos = {
-  hero:      `${CDN}/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=85`,
-  nurseHome: `${CDN}/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80`,
-  ptHome:    `${CDN}/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80`,
-  aide:      `${CDN}/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80`,
-  wound:     `${CDN}/photo-1584820927498-4e5f9c8b83b0?auto=format&fit=crop&w=900&q=80`,
-  whyUs:     `${CDN}/photo-1530026405845-9e2477e68c38?auto=format&fit=crop&w=1000&q=80`,
-  break:     `${CDN}/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1800&q=80`,
+  hero:      `${UN}/photo-1765896387387-0538bc9f997e?w=1800&q=80&auto=format&fit=crop`,
+  nurseHome: `${PX}/7345459/pexels-photo-7345459.jpeg?auto=compress&cs=tinysrgb&w=900`,
+  ptHome:    `${PX}/7551627/pexels-photo-7551627.jpeg?auto=compress&cs=tinysrgb&w=900`,
+  aide:      `${PX}/18459193/pexels-photo-18459193.jpeg?auto=compress&cs=tinysrgb&w=900`,
+  wound:     `${PX}/5721552/pexels-photo-5721552.jpeg?auto=compress&cs=tinysrgb&w=900`,
+  whyUs:     `${PX}/18429374/pexels-photo-18429374.jpeg?auto=compress&cs=tinysrgb&w=1000`,
+  break:     `${PX}/16364308/pexels-photo-16364308.jpeg?auto=compress&cs=tinysrgb&w=1800`,
 }
 
 const services = [
