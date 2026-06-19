@@ -2,11 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Phone } from 'lucide-react'
 
-const UN = 'https://images.unsplash.com'
 const PX = 'https://images.pexels.com/photos'
 
 const photos = {
-  hero:      `${UN}/photo-1765896387387-0538bc9f997e?w=1800&q=80&auto=format&fit=crop`,
+  hero:      `${PX}/7345465/pexels-photo-7345465.jpeg?auto=compress&cs=tinysrgb&w=1800`,
   nurseHome: `${PX}/7345459/pexels-photo-7345459.jpeg?auto=compress&cs=tinysrgb&w=900`,
   ptHome:    `${PX}/7551627/pexels-photo-7551627.jpeg?auto=compress&cs=tinysrgb&w=900`,
   aide:      `${PX}/18459193/pexels-photo-18459193.jpeg?auto=compress&cs=tinysrgb&w=900`,
