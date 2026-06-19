@@ -79,7 +79,7 @@ export default function HomePage() {
           <div className="max-w-2xl mb-16">
             <span className="kicker mb-5">What we do</span>
             <h2 className="text-4xl lg:text-5xl text-navy leading-tight">
-              The care a hospital gives, in the place you actually live.
+              Your hospital care, continued at home.
             </h2>
           </div>
 
