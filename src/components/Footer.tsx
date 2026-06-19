@@ -9,7 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">
           {/* Brand */}
           <div className="md:col-span-4">
-            <Image src="/logo.png" alt="HAPI Health TX" width={150} height={52} className="h-12 w-auto object-contain brightness-0 invert mb-5" />
+            <div className="inline-block bg-white rounded-lg px-4 py-3 mb-5">
+              <Image src="/logo.png" alt="HAPI Health TX" width={150} height={52} className="h-10 w-auto object-contain" />
+            </div>
             <p className="text-white/55 text-sm leading-relaxed max-w-xs">
               Home health care for Houston families, delivered with the skill of a hospital and the heart of a neighbor.
             </p>
