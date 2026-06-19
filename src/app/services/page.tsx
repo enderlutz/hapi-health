@@ -147,10 +147,10 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-[#0c2d4e] text-white py-20">
+      <section className="bg-[#1b3a6b] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-teal-300 font-bold text-sm uppercase tracking-widest mb-4">Our Services</p>
+            <p className="text-red-300 font-bold text-sm uppercase tracking-widest mb-4">Our Services</p>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-5">
               Everything you need.<br />All at home.
             </h1>
@@ -166,7 +166,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-6 overflow-x-auto py-4 text-sm font-semibold">
             {services.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="text-gray-500 hover:text-[#0c2d4e] whitespace-nowrap transition-colors">
+              <a key={s.id} href={`#${s.id}`} className="text-gray-500 hover:text-[#1b3a6b] whitespace-nowrap transition-colors">
                 {s.title}
               </a>
             ))}
@@ -175,7 +175,7 @@ export default function ServicesPage() {
       </nav>
 
       {/* Services */}
-      <section className="py-12 bg-[#faf9f6]">
+      <section className="py-12 bg-[#f8f7f4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           {services.map((s, i) => (
             <div
@@ -192,7 +192,7 @@ export default function ServicesPage() {
                   className="object-cover"
                   unoptimized
                 />
-                <div className="absolute inset-0 bg-[#0c2d4e]/40" />
+                <div className="absolute inset-0 bg-[#1b3a6b]/40" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white/80 text-xs font-bold uppercase tracking-widest mb-1">{s.title}</p>
                   <p className="text-white text-2xl font-extrabold leading-tight">{s.headline}</p>
@@ -205,14 +205,14 @@ export default function ServicesPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {s.includes.map((item) => (
                     <div key={item} className="flex items-start gap-2.5">
-                      <CheckCircle size={15} className="text-[#1a7a72] mt-0.5 shrink-0" />
+                      <CheckCircle size={15} className="text-[#cc1230] mt-0.5 shrink-0" />
                       <span className="text-gray-700 text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
                 <Link
                   href="/contact"
-                  className="mt-8 inline-flex items-center gap-2 bg-[#0c2d4e] text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#0a2540] transition-colors"
+                  className="mt-8 inline-flex items-center gap-2 bg-[#1b3a6b] text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#142d55] transition-colors"
                 >
                   Request This Service <ArrowRight size={14} />
                 </Link>
@@ -225,11 +225,11 @@ export default function ServicesPage() {
       {/* Insurance */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold text-[#0c2d4e] mb-3">We Accept Most Insurance Plans</h2>
+          <h2 className="text-3xl font-extrabold text-[#1b3a6b] mb-3">We Accept Most Insurance Plans</h2>
           <p className="text-gray-500 mb-10">We verify your benefits at no cost before care begins.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {['Medicare', 'Medicaid', 'Blue Cross', 'United', 'Aetna', 'Humana', 'Cigna', 'Private Pay'].map((ins) => (
-              <div key={ins} className="bg-[#faf9f6] border border-gray-200 rounded-xl py-3 text-sm font-semibold text-gray-700">
+              <div key={ins} className="bg-[#f8f7f4] border border-gray-200 rounded-xl py-3 text-sm font-semibold text-gray-700">
                 {ins}
               </div>
             ))}
@@ -238,12 +238,12 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-14 bg-[#0c2d4e] text-white">
+      <section className="py-14 bg-[#1b3a6b] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold mb-4">Questions about a specific service?</h2>
           <p className="text-blue-200 mb-8">Our clinical team will walk you through every option.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-[#1a7a72] text-white px-8 py-4 rounded-full font-bold hover:bg-[#166b63] transition-colors">
+            <Link href="/contact" className="bg-[#cc1230] text-white px-8 py-4 rounded-full font-bold hover:bg-[#a50f27] transition-colors">
               Request Care
             </Link>
             <a href="tel:+18325551234" className="border-2 border-white/40 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center justify-center gap-2">

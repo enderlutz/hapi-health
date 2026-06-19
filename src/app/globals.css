@@ -1,23 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0c2d4e;
-  --teal: #1a7a72;
-  --warm-white: #faf9f6;
-  --text-primary: #111827;
-  --text-muted: #6b7280;
+  --navy: #1b3a6b;
+  --red:  #cc1230;
+  --off-white: #f8f7f4;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: #ffffff;
-  color: var(--text-primary);
+  background: #fff;
+  color: #111827;
   -webkit-font-smoothing: antialiased;
 }
 
-details summary::-webkit-details-marker {
-  display: none;
-}
+details summary::-webkit-details-marker { display: none; }

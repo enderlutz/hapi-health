@@ -68,14 +68,14 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c2d4e]/90 via-[#0c2d4e]/70 to-[#0c2d4e]/30" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
-          <div className="max-w-2xl">
-            <p className="text-teal-300 font-semibold text-sm uppercase tracking-widest mb-5">
+        <div className="relative z-10 w-full px-8 lg:px-16 xl:px-24 py-28">
+          <div className="max-w-xl">
+            <p className="text-red-300 font-semibold text-sm uppercase tracking-widest mb-5">
               Houston&apos;s Home Health Team
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] mb-6">
               Healing<br />begins<br />
-              <span className="text-teal-300">at home.</span>
+              <span className="text-red-300">at home.</span>
             </h1>
             <p className="text-lg text-blue-100 leading-relaxed mb-10 max-w-lg">
               Skilled nurses, therapists, and aides — licensed, background-checked, and sent to your door within 24 hours of your referral.
@@ -83,7 +83,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
                 href="/contact"
-                className="bg-[#1a7a72] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#166b63] transition-colors text-center"
+                className="bg-[#cc1230] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#a50f27] transition-colors text-center"
               >
                 Request Care
               </Link>
@@ -99,7 +99,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4">
               {['Medicare Certified', 'Medicaid Enrolled', 'TX HHSC Licensed', '24/7 On-Call RN'].map((badge) => (
                 <div key={badge} className="flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-2">
-                  <CheckCircle size={13} className="text-teal-300 shrink-0" />
+                  <CheckCircle size={13} className="text-red-300 shrink-0" />
                   <span className="text-white text-xs font-medium">{badge}</span>
                 </div>
               ))}
@@ -119,7 +119,7 @@ export default function HomePage() {
               { n: '24/7', l: 'Nurse On-Call'        },
             ].map((s) => (
               <div key={s.l}>
-                <p className="text-3xl lg:text-4xl font-extrabold text-teal-300">{s.n}</p>
+                <p className="text-3xl lg:text-4xl font-extrabold text-red-300">{s.n}</p>
                 <p className="text-blue-300 text-sm mt-1">{s.l}</p>
               </div>
             ))}
@@ -131,7 +131,7 @@ export default function HomePage() {
       <section className="py-24 bg-[#faf9f6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
-            <p className="text-[#1a7a72] font-bold text-sm uppercase tracking-widest mb-3">What We Offer</p>
+            <p className="text-[#cc1230] font-bold text-sm uppercase tracking-widest mb-3">What We Offer</p>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0c2d4e] leading-tight">
               Clinical care, <br className="hidden sm:block" />
               delivered to your door.
@@ -157,7 +157,7 @@ export default function HomePage() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-[#0c2d4e] mb-2">{s.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{s.desc}</p>
-                  <span className="text-[#1a7a72] font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-[#cc1230] font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                     Learn more <ArrowRight size={14} />
                   </span>
                 </div>
@@ -214,7 +214,7 @@ export default function HomePage() {
                 />
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-6 -right-6 bg-[#1a7a72] text-white rounded-2xl px-6 py-5 shadow-xl">
+              <div className="absolute -bottom-6 -right-6 bg-[#cc1230] text-white rounded-2xl px-6 py-5 shadow-xl">
                 <p className="text-3xl font-extrabold">15+</p>
                 <p className="text-teal-200 text-sm font-medium">Years serving<br />Houston families</p>
               </div>
@@ -222,7 +222,7 @@ export default function HomePage() {
 
             {/* Content */}
             <div>
-              <p className="text-[#1a7a72] font-bold text-sm uppercase tracking-widest mb-3">Why Choose Us</p>
+              <p className="text-[#cc1230] font-bold text-sm uppercase tracking-widest mb-3">Why Choose Us</p>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0c2d4e] leading-tight mb-6">
                 You deserve care you can trust.
               </h2>
@@ -239,7 +239,7 @@ export default function HomePage() {
                   'Joint Commission accredited — the gold standard in health care',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-gray-700">
-                    <CheckCircle size={20} className="text-[#1a7a72] shrink-0 mt-0.5" />
+                    <CheckCircle size={20} className="text-[#cc1230] shrink-0 mt-0.5" />
                     <span className="font-medium">{item}</span>
                   </li>
                 ))}
@@ -259,7 +259,7 @@ export default function HomePage() {
       <section className="py-20 bg-[#faf9f6]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#1a7a72] font-bold text-sm uppercase tracking-widest mb-3">Getting Started</p>
+            <p className="text-[#cc1230] font-bold text-sm uppercase tracking-widest mb-3">Getting Started</p>
             <h2 className="text-4xl font-extrabold text-[#0c2d4e]">Care in three simple steps.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -282,7 +282,7 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
-            <p className="text-[#1a7a72] font-bold text-sm uppercase tracking-widest mb-3">Patient Stories</p>
+            <p className="text-[#cc1230] font-bold text-sm uppercase tracking-widest mb-3">Patient Stories</p>
             <h2 className="text-4xl font-extrabold text-[#0c2d4e]">Heard from the people we serve.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -313,7 +313,7 @@ export default function HomePage() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[#0c2d4e]" />
         <div className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, #1a7a72 0%, transparent 60%)' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, #cc1230 0%, transparent 60%)' }}
         />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4">
@@ -325,7 +325,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-[#1a7a72] text-white px-9 py-4 rounded-full font-bold text-lg hover:bg-[#166b63] transition-colors"
+              className="bg-[#cc1230] text-white px-9 py-4 rounded-full font-bold text-lg hover:bg-[#a50f27] transition-colors"
             >
               Request Care Online
             </Link>
