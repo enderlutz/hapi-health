@@ -5,10 +5,10 @@ import { Phone } from 'lucide-react'
 const CDN = 'https://images.unsplash.com'
 
 const leadership = [
-  { name: 'Patricia Mendez, RN, MSN', title: 'Chief Executive Officer', bio: 'Twenty years of clinical and administrative leadership in home health. Patricia founded HAPI to bring hospital-quality care to the Houston families she grew up around.', photo: `https://images.pexels.com/photos/15780889/pexels-photo-15780889.jpeg?auto=compress&cs=tinysrgb&w=400` },
-  { name: 'David Okafor, PT, DPT', title: 'Director of Clinical Services', bio: 'A doctoral-level physical therapist with fifteen years in home rehabilitation. David owns clinical quality, outcomes, and the training every therapist goes through.', photo: `https://images.pexels.com/photos/13100886/pexels-photo-13100886.jpeg?auto=compress&cs=tinysrgb&w=400` },
-  { name: 'Sandra Tran, LMSW', title: 'Director of Patient Services', bio: 'Sandra runs intake, care coordination, and social work, making sure no patient falls through the cracks between the hospital and home.', photo: `https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&w=400` },
-  { name: 'James Holloway, RN, CWCN', title: 'Wound Care Coordinator', bio: 'A certified wound-care nurse who leads our wound program and trains the nursing staff on the protocols that keep patients healing and out of the hospital.', photo: `https://images.pexels.com/photos/10657877/pexels-photo-10657877.jpeg?auto=compress&cs=tinysrgb&w=400` },
+  { name: 'Patricia Mendez, RN, MSN', title: 'Chief Executive Officer', bio: 'Twenty years of clinical and administrative leadership in home health. Patricia founded HAPI to bring hospital-quality care to the Houston families she grew up around.', photo: `https://images.pexels.com/photos/6749773/pexels-photo-6749773.jpeg?auto=compress&cs=tinysrgb&w=400` },
+  { name: 'David Okafor, PT, DPT', title: 'Director of Clinical Services', bio: 'A doctoral-level physical therapist with fifteen years in home rehabilitation. David owns clinical quality, outcomes, and the training every therapist goes through.', photo: `https://images.pexels.com/photos/5888145/pexels-photo-5888145.jpeg?auto=compress&cs=tinysrgb&w=400` },
+  { name: 'Sandra Tran, LMSW', title: 'Director of Patient Services', bio: 'Sandra runs intake, care coordination, and social work, making sure no patient falls through the cracks between the hospital and home.', photo: `https://images.pexels.com/photos/6129506/pexels-photo-6129506.jpeg?auto=compress&cs=tinysrgb&w=400` },
+  { name: 'James Holloway, RN, CWCN', title: 'Wound Care Coordinator', bio: 'A certified wound-care nurse who leads our wound program and trains the nursing staff on the protocols that keep patients healing and out of the hospital.', photo: `https://images.pexels.com/photos/12660379/pexels-photo-12660379.jpeg?auto=compress&cs=tinysrgb&w=400` },
 ]
 
 export default function AboutPage() {

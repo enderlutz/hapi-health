@@ -1,6 +1,7 @@
-import Link from 'next/link'
+'use client'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Mail, ArrowRight } from 'lucide-react'
+import { Mail, ArrowRight, X } from 'lucide-react'
 
 const openings = [
   { title: 'Registered Nurse (RN), Home Health', type: 'Full-time / Part-time', desc: 'Skilled nursing visits, wound care, medication management, and patient teaching in the home. TX RN license and at least one year of clinical experience.' },
@@ -14,12 +15,15 @@ const openings = [
 ]
 
 export default function CareersPage() {
+  // null = closed; '' = general application; otherwise the job title
+  const [applyFor, setApplyFor] = useState<string | null>(null)
+
   return (
     <>
       {/* Photo header */}
       <section className="relative min-h-[58vh] flex items-end">
         <div className="absolute inset-0">
-          <Image src={`https://images.pexels.com/photos/7345476/pexels-photo-7345476.jpeg?auto=compress&cs=tinysrgb&w=1800`} alt="A home health clinician at work" fill className="object-cover object-center" unoptimized />
+          <Image src="https://images.pexels.com/photos/7345476/pexels-photo-7345476.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="A home health clinician at work" fill className="object-cover object-center" unoptimized />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/55 to-navy/20" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pb-16 pt-44 w-full">
@@ -33,7 +37,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Culture — editorial split, no icon tiles */}
+      {/* Culture */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -61,7 +65,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Benefits — inline prose row, not a checkmark grid */}
+      {/* Benefits */}
       <section className="py-16 bg-paper">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-2xl text-navy mb-6 font-display">What we offer</h2>
@@ -78,7 +82,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Openings — clean list, no chips */}
+      {/* Openings */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
@@ -94,9 +98,12 @@ export default function CareersPage() {
                 </div>
                 <div className="md:w-1/3 flex items-center justify-between md:justify-end gap-6">
                   <span className="text-sm text-gray-500">{job.type}</span>
-                  <Link href="/contact" className="text-navy font-semibold text-sm inline-flex items-center gap-1.5 group-hover:text-brand-red transition-colors whitespace-nowrap">
+                  <button
+                    onClick={() => setApplyFor(job.title)}
+                    className="text-navy font-semibold text-sm inline-flex items-center gap-1.5 hover:text-brand-red transition-colors whitespace-nowrap"
+                  >
                     Apply <ArrowRight size={14} />
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}
@@ -109,13 +116,173 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="max-w-lg">
             <h2 className="text-3xl lg:text-4xl leading-tight mb-3">Don&apos;t see your role?</h2>
-            <p className="text-white/75">We are always growing. Send your resume and we will reach out when something fits.</p>
+            <p className="text-white/75">We are always growing. Send us a general application and we will reach out when something fits.</p>
           </div>
-          <a href="mailto:careers@hapihealthtx.com" className="inline-flex items-center gap-2.5 bg-brand-red text-white px-8 py-4 rounded-md font-semibold hover:bg-brand-red-dark transition-colors shrink-0">
-            <Mail size={18} /> careers@hapihealthtx.com
-          </a>
+          <button onClick={() => setApplyFor('')} className="inline-flex items-center gap-2.5 bg-brand-red text-white px-8 py-4 rounded-md font-semibold hover:bg-brand-red-dark transition-colors shrink-0">
+            <Mail size={18} /> Submit a general application
+          </button>
         </div>
       </section>
+
+      {applyFor !== null && (
+        <ApplicationModal position={applyFor} positions={openings.map((o) => o.title)} onClose={() => setApplyFor(null)} />
+      )}
     </>
+  )
+}
+
+function ApplicationModal({
+  position,
+  positions,
+  onClose,
+}: {
+  position: string
+  positions: string[]
+  onClose: () => void
+}) {
+  const [submitted, setSubmitted] = useState(false)
+  const [form, setForm] = useState({
+    name: '', email: '', phone: '',
+    position: position || '',
+    license: '', experience: '', availability: '', resume: '', message: '',
+  })
+
+  // Close on Escape and lock body scroll while open
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setSubmitted(true)
+  }
+
+  const inputCls = 'w-full border border-gray-300 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy bg-white'
+
+  return (
+    <div
+      className="fixed inset-0 z-[60] flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto bg-navy-dark/70 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white w-full max-w-2xl my-4 md:my-0 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-start justify-between gap-4 px-7 py-6 border-b border-gray-200">
+          <div>
+            <p className="kicker mb-2">Apply to HAPI</p>
+            <h2 className="text-2xl text-navy font-display leading-tight">
+              {position ? position : 'General application'}
+            </h2>
+          </div>
+          <button onClick={onClose} aria-label="Close" className="text-gray-400 hover:text-navy transition-colors p-1 shrink-0">
+            <X size={22} />
+          </button>
+        </div>
+
+        {submitted ? (
+          <div className="px-7 py-12 text-center">
+            <h3 className="text-2xl text-navy font-display mb-3">Application received.</h3>
+            <p className="text-gray-600 max-w-md mx-auto leading-relaxed">
+              Thank you for applying{position ? ` for ${position}` : ''}. Our team reviews every application and will reach out within a few business days if it is a fit.
+            </p>
+            <button onClick={onClose} className="mt-8 bg-navy text-white px-7 py-3 rounded-md font-semibold hover:bg-navy-dark transition-colors">
+              Close
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="px-7 py-6 space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Full name *</label>
+                <input name="name" required value={form.name} onChange={handleChange} className={inputCls} placeholder="Full name" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone *</label>
+                <input name="phone" type="tel" required value={form.phone} onChange={handleChange} className={inputCls} placeholder="(832) 000-0000" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email *</label>
+                <input name="email" type="email" required value={form.email} onChange={handleChange} className={inputCls} placeholder="you@example.com" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Position *</label>
+                <select name="position" required value={form.position} onChange={handleChange} className={inputCls}>
+                  <option value="">Select a position</option>
+                  {positions.map((p) => <option key={p}>{p}</option>)}
+                  <option>Other / General</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">License / credentials</label>
+                <input name="license" value={form.license} onChange={handleChange} className={inputCls} placeholder="e.g. TX RN #1234567" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Years of experience</label>
+                <select name="experience" value={form.experience} onChange={handleChange} className={inputCls}>
+                  <option value="">Select</option>
+                  <option>Less than 1 year</option>
+                  <option>1–3 years</option>
+                  <option>3–5 years</option>
+                  <option>5–10 years</option>
+                  <option>10+ years</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Availability</label>
+                <select name="availability" value={form.availability} onChange={handleChange} className={inputCls}>
+                  <option value="">Select</option>
+                  <option>Full-time</option>
+                  <option>Part-time</option>
+                  <option>PRN / Per visit</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Resume link</label>
+                <input name="resume" value={form.resume} onChange={handleChange} className={inputCls} placeholder="Link to resume or LinkedIn" />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Why HAPI? (optional)</label>
+              <textarea name="message" rows={3} value={form.message} onChange={handleChange} className={`${inputCls} resize-none`} placeholder="Tell us a little about yourself and what you are looking for." />
+            </div>
+
+            <p className="text-xs text-gray-400 leading-relaxed">
+              By applying, you agree to our Privacy Policy. To email a resume file directly, write to{' '}
+              <a href="mailto:careers@hapihealthtx.com" className="text-navy font-semibold">careers@hapihealthtx.com</a>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+              <button type="submit" className="flex-1 bg-brand-red text-white py-3.5 rounded-md font-semibold hover:bg-brand-red-dark transition-colors">
+                Submit application
+              </button>
+              <button type="button" onClick={onClose} className="px-6 py-3.5 rounded-md font-semibold text-gray-600 border border-gray-300 hover:border-navy hover:text-navy transition-colors">
+                Cancel
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
+    </div>
   )
 }
